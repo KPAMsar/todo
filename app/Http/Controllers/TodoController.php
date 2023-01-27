@@ -23,7 +23,7 @@ class TodoController extends Controller
     }
 
     public function todolist(){
-        $todo_items = Todo::all();
+        $todo_items = Todo::orderBy('created_at', 'desc')->get();
         return $todo_items;
     }
 
